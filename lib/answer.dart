@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 
 class Answer extends StatelessWidget {
   const Answer(this.x, this.answerText, {Key? key}) : super(key: key);
@@ -17,7 +20,17 @@ class Answer extends StatelessWidget {
           onPressed: x,
           child: Text(
             answerText,
-            style: const TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25),
+          ),
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: BorderSide(
+                  color: Colors.indigo,
+                ),
+              ),
+            ),
           ),
         ),
       ),

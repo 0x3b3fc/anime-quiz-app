@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'result.dart';
 import 'quiz.dart';
 
+/*
+* using StateFul Widget To Build The App
+* */
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
@@ -11,12 +14,13 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-bool isSwitched = false;
+bool isSwitched = false; //to swtich for dark mode
 
 class _MyAppState extends State<MyApp> {
   int _questionIndex = 0;
   int _totalScore = 0;
 
+  //score check
   answerQuestion(int score) {
     print('Answer Chosen!');
     setState(() {
@@ -65,7 +69,6 @@ class _MyAppState extends State<MyApp> {
     {
       'questionText': 'What\'s the name of Naruto\'s Bego?',
       'answers': [
-
         {'text': 'Sasuki', 'score': 0},
         {'text': 'Gara', 'score': 0},
         {'text': 'Kurama', 'score': 40},
@@ -85,7 +88,7 @@ class _MyAppState extends State<MyApp> {
           title: Text(
             'Anime Quiz App',
             style: TextStyle(
-                color: isSwitched == false ? Colors.white : Colors.black),
+                color: isSwitched == false ? Colors.white : Colors.black), //dark mode validation
           ),
           centerTitle: true,
           actions: [
